@@ -23,6 +23,10 @@ def rectangle_area(width: str, height: str) -> float:
         raise ValueError('Введено недопустимое значение')
     if '.' in width or '.' in height:
         raise ValueError('Введено недопустимое значение')
+    if ',' in width or ',' in height:
+        w = parse_number(width)
+        h = parse_number(height)
+        return w * h
     w = parse_number(width)
     h = parse_number(height)
     return w * h

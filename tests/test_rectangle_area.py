@@ -63,3 +63,16 @@ def test_area_float_int():
         rectangle_area(width, height)
         # Assert
     assert str(exc_info.value) == "Введено недопустимое значение"
+
+def test_area_float_int_with_comma():
+    '''
+    Тест вычисления площади, если длина равна числу с плавающей запятой
+    '''
+    # Arrange
+    width = '3,0'
+    height = '5,0'
+    expected_result = 15
+    # Act
+    actual_result = rectangle_area(width, height)
+    # Assert
+    assert actual_result == expected_result
