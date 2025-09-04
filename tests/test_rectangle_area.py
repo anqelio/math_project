@@ -14,7 +14,7 @@ def test_area_3_and_5_positive():
     # Assert
     assert actual_result == pytest.approx(expected_result)
 
-def test_area_3_and_5_negatie():
+def test_area_3_and_5_negative():
     """
     Тест вычисления площади с целыми отрицательными длинами сторон
     """

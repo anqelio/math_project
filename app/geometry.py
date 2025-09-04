@@ -11,7 +11,9 @@ def parse_number(value: str) -> float:
         number = float(s)
     except ValueError:
         raise ValueError("Введено недопустимое значение")
-    if number <= 0:
+    if number < 0:
+        raise ValueError("Введено недопустимое значение")
+    if number == 0:
         raise ValueError("Введено недопустимое значение")
     return number
 
