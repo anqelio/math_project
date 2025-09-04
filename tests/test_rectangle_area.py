@@ -6,8 +6,8 @@ def test_area_3_and_5_positive():
     Тест вычисления площади с целыми положительными длинами сторон
     """
     # Arrange
-    width = 3
-    height = 5
+    width = '3'
+    height = '5'
     expected_result = 15
     # Act
     actual_result = rectangle_area(width, height)
@@ -19,8 +19,8 @@ def test_area_3_and_5_negatie():
     Тест вычисления площади с целыми отрицательными длинами сторон
     """
     # Arrange
-    width = -3
-    height = 5
+    width = '-3'
+    height = '5'
     expected_result = 15
     # Act
     actual_result = rectangle_area(width, height)
