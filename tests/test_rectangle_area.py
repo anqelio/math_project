@@ -45,8 +45,8 @@ def test_area_0():
     Тест вычисления площади, если длина равно нулю
     '''
     # Arrange
-    width = '5'
-    height = '0'
+    width = '0'
+    height = '5'
     with pytest.raises(ValueError) as exc_info:
         rectangle_area(width, height)
         # Assert
@@ -76,3 +76,15 @@ def test_area_float_int_with_comma():
     actual_result = rectangle_area(width, height)
     # Assert
     assert actual_result == expected_result
+
+def test_area_text():
+    '''
+    Тест вычисления площади, если введены не те данные
+    '''
+    # Arrange
+    width = 'lala'
+    height = '5'
+    with pytest.raises(ValueError) as exc_info:
+        rectangle_area(width, height)
+        # Assert
+    assert str(exc_info.value) == "Введено недопустимое значение"
