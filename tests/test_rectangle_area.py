@@ -45,8 +45,20 @@ def test_area_0():
     Тест вычисления площади, если длина равно нулю
     '''
     # Arrange
-    width = '0'
-    height = '5'
+    width = '5'
+    height = '0'
+    with pytest.raises(ValueError) as exc_info:
+        rectangle_area(width, height)
+        # Assert
+    assert str(exc_info.value) == "Введено недопустимое значение"
+
+def test_area_float_int():
+    '''
+    Тест вычисления площади, если длина равна числу с плавающей точкой
+    '''
+    # Arrange
+    width = '3.0'
+    height = '5.0'
     with pytest.raises(ValueError) as exc_info:
         rectangle_area(width, height)
         # Assert
