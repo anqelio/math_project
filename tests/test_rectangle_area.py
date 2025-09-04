@@ -21,11 +21,11 @@ def test_area_3_and_5_negatie():
     # Arrange
     width = '-3'
     height = '5'
-    expected_result = 15
+    expected_result = -15
     # Act
     actual_result = rectangle_area(width, height)
     # Assert
-    assert actual_result == pytest.approx(expected_result)
+    assert actual_result == expected_result
 
 def test_area_with_empty_string():
     """
@@ -38,4 +38,16 @@ def test_area_with_empty_string():
     with pytest.raises(ValueError) as exc_info:
         rectangle_area(width, height)
     # Assert
+    assert str(exc_info.value) == "Введено недопустимое значение"
+
+def test_area_0():
+    '''
+    Тест вычисления площади, если длина равно нулю
+    '''
+    # Arrange
+    width = '0'
+    height = '5'
+    with pytest.raises(ValueError) as exc_info:
+        rectangle_area(width, height)
+        # Assert
     assert str(exc_info.value) == "Введено недопустимое значение"

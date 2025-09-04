@@ -11,14 +11,16 @@ def parse_number(value: str) -> float:
         number = float(s)
     except ValueError:
         raise ValueError("Введено недопустимое значение")
+    if number <= 0:
+        raise ValueError("Введено недопустимое значение")
     return number
 
 def rectangle_area(width: str, height: str) -> float:
     """
     Вычисляет площадь прямоугольника, проверяя входные строки.
     """
-    if w == '' or h == '':
-        raise ValueError('Введена пустая строка')
+    if width == '' or height == '':
+        raise ValueError('Введено недопустимое значение')
     w = parse_number(width)
     h = parse_number(height)
     return w * h
